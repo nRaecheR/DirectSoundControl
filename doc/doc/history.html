@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Keywords"
+ content="DirectSound, dsound.dll, DirectSound Control, DSC, Tweak, Mafia, DX:IW, DeusEx2, Speaker Setup, Arne Bockholdt, www.bockholdt.com, logging, interface, method, wrapper, Voice Management, Primary Buffer, debug">
+  <meta name="author" content="Arne Bockholdt">
+  <meta name="copyright"
+ content="Copyright 2003-2004 (C) Arne Bockholdt">
+  <meta name="description" content="Homepage of DirectSoundControl">
+  <meta name="generator" content="Mozilla 1.7a Composer">
+  <meta name="language" content="en">
+  <meta name="distribution" content="global">
+  <meta name="robots" content="ALL">
+  <title>DirectSound Control Version History</title>
+</head>
+<body style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);"
+ alink="#ffffff" link="#ffffff" vlink="#ffffff">
+<table style="text-align: left; width: 100%;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><big><big><big>DirectSound
+Control</big></big></big><br>
+      <big><big><big> <small><small><small>"The way it's meant to
+sound..."</small></small></small></big></big></big><br>
+      <hr style="width: 400px; height: 2px;"> </div>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left; height: 900px;" border="0"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: left; vertical-align: top; width: 150px;"><big><a
+ href="index.html">Home</a><br>
+      <a href="download.html">Download</a><br>
+      <a href="requirements.html">Requirements</a><br>
+      <a href="installation.html">Installation</a><br>
+      <a href="faq.html">FAQ</a><br>
+      <a href="developers.html">Developers</a><br>
+      <a href="limitations.html">Limitations</a><br>
+      <a href="history.html">Version
+History</a><br>
+      <a href="contact.html">Contact</a></big><br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"> <span
+ style="font-weight: bold;"> </span><span style="font-weight: bold;"></span>
+      <big><span style="font-weight: bold;">Version history : </span></big><br>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.6.zip">V1.6</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>(All) Added function to force the return of a given
+speaker configuration. (IDirectSound::GetSpeakerSetup)<br>
+            </li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.5.zip">V1.5</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>(All) Support for ::CoCreateInstance() invoked version
+of
+DirectSound, this
+enhances the compatibility with many games.</li>
+            <li>(All) Added wrapper for DllGetClassObject export
+function</li>
+            <li>(All) Added wrapper for DLLCanUnloadNow export function</li>
+            <li>(All) Added wrapper for IClassFactory interface</li>
+            <li>(All) Added wrapper for enumeration callbacks.<br>
+            </li>
+            <li>(All) Bugfix : Fixed a bug in
+IDirectSound8::QueryInterface
+method which returned the original interface instead of the wrapped one<br>
+            </li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.4.zip">V1.4</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>(All) Added wrappers for IDirectSoundBuffer(8),
+IDirectSound3DBuffer(8) and IDirectSound3DListener(8) interfaces</li>
+            <li>(All) Added function to force the primary buffer format<br>
+            </li>
+            <li>(Devel) Major enhancements of the logging functionality
+like
+instance
+identification, enumeration of available sound hardware, OS and DirectX
+version etc. BUT...</li>
+            <li>(Public) Removed debug and profiling functionality from
+public build, if
+you're interested in a logging-enabled DLL version please contact me</li>
+            <li>(Devel) Changed log format from ASCII to CSV<br>
+            </li>
+            <li>(All) Bugfix : Under certain conditions
+ForceHardwareMixing
+or
+ForceSoftwareMixing didn't worked<br>
+            </li>
+            <li>(All) Other minor bugfixes (rare memory leaks etc.)<br>
+            </li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.3.zip">V1.3</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added function to force voice management</li>
+            <li>Added function to force non-static buffers</li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.2.zip">V1.2</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added function to force exclusive mode for cooperation
+level</li>
+            <li>Added function to force HRTF_FULL software mixing mode</li>
+            <li>Added more debug output with timestamp</li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.1.zip">V1.1</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added configuration file</li>
+            <li>Added wrapper functionality for rest of DirectSound
+functions</li>
+            <li>Added speaker configuration reset prevention for
+pre-DX8
+DirectSound</li>
+            <li>Added function to force software mixing for all buffers</li>
+            <li>Added function to force hardware mixing for all buffers</li>
+            <li>Added function to force less supported hardware mixed
+buffers
+(2D + 3D)</li>
+            <li>Added function to force WHQL certification</li>
+            <li>Added function to log DirectSound calls to file</li>
+          </ul>
+        </ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.0.zip">V1.0</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Initial revision</li>
+          </ul>
+        </ul>
+      </ul>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table
+ style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><small><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<table style="text-align: left; width: 100%;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><big><big><big>DirectSound
+Control</big></big></big><br>
+      <big><big><big> <small><small><small>"The way it's meant to
+sound..."</small></small></small></big></big></big><br>
+      <hr style="width: 400px; height: 2px;"> </div>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left; height: 900px;" border="0"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: left; vertical-align: top; width: 150px;"><big><a
+ href="index.html">Home</a><br>
+      <a href="download.html">Download</a><br>
+      <a href="requirements.html">Requirements</a><br>
+      <a href="installation.html">Installation</a><br>
+      <a href="faq.html">FAQ</a><br>
+      <a href="developers.html">Developers</a><br>
+      <a href="limitations.html">Limitations</a><br>
+      <a href="history.html">Version
+History</a><br>
+      <a href="contact.html">Contact</a></big><br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"> <span
+ style="font-weight: bold;"> </span><span style="font-weight: bold;"></span>
+      <big><span style="font-weight: bold;">Version history : </span></big><br>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.5.zip">V1.5</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>(All) Support for ::CoCreateInstance() invoked version
+of
+DirectSound, this
+enhances the compatibility with many games.</li>
+            <li>(All) Added wrapper for DllGetClassObject export
+function</li>
+            <li>(All) Added wrapper for DLLCanUnloadNow export function</li>
+            <li>(All) Added wrapper for IClassFactory interface</li>
+            <li>(All) Added wrapper for enumeration callbacks.<br>
+            </li>
+            <li>(All) Bugfix : Fixed a bug in
+IDirectSound8::QueryInterface
+method which returned the original interface instead of the wrapped one<br>
+            </li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.4.zip">V1.4</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>(All) Added wrappers for IDirectSoundBuffer(8),
+IDirectSound3DBuffer(8) and IDirectSound3DListener(8) interfaces</li>
+            <li>(All) Added function to force the primary buffer format<br>
+            </li>
+            <li>(Devel) Major enhancements of the logging functionality
+like
+instance
+identification, enumeration of available sound hardware, OS and DirectX
+version etc. BUT...</li>
+            <li>(Public) Removed debug and profiling functionality from
+public build, if
+you're interested in a logging-enabled DLL version please contact me</li>
+            <li>(Devel) Changed log format from ASCII to CSV<br>
+            </li>
+            <li>(All) Bugfix : Under certain conditions
+ForceHardwareMixing
+or
+ForceSoftwareMixing didn't worked<br>
+            </li>
+            <li>(All) Other minor bugfixes (rare memory leaks etc.)<br>
+            </li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.3.zip">V1.3</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added function to force voice management</li>
+            <li>Added function to force non-static buffers</li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.2.zip">V1.2</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added function to force exclusive mode for cooperation
+level</li>
+            <li>Added function to force HRTF_FULL software mixing mode</li>
+            <li>Added more debug output with timestamp</li>
+          </ul>
+        </ul>
+      </ul>
+      <ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.1.zip">V1.1</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Added configuration file</li>
+            <li>Added wrapper functionality for rest of DirectSound
+functions</li>
+            <li>Added speaker configuration reset prevention for
+pre-DX8
+DirectSound</li>
+            <li>Added function to force software mixing for all buffers</li>
+            <li>Added function to force hardware mixing for all buffers</li>
+            <li>Added function to force less supported hardware mixed
+buffers
+(2D + 3D)</li>
+            <li>Added function to force WHQL certification</li>
+            <li>Added function to log DirectSound calls to file</li>
+          </ul>
+        </ul>
+        <li>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.bockholdt.com/dsc/dsc-1.0.zip">V1.0</a> :
+&nbsp;&nbsp; </li>
+        <ul>
+          <ul>
+            <li>Initial revision</li>
+          </ul>
+        </ul>
+      </ul>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table
+ style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><small><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

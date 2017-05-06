@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Keywords"
+ content="DirectSound, dsound.dll, DirectSound Control, DSC, Tweak, Mafia, DX:IW, DeusEx2, Speaker Setup, Arne Bockholdt, www.bockholdt.com, logging, interface, method, wrapper, Voice Management, Primary Buffer, debug">
+  <meta name="author" content="Arne Bockholdt">
+  <meta name="copyright"
+ content="Copyright 2003-2004 (C) Arne Bockholdt">
+  <meta name="description" content="Homepage of DirectSoundControl">
+  <meta name="generator" content="Mozilla 1.7a Composer">
+  <meta name="language" content="en">
+  <meta name="distribution" content="global">
+  <meta name="robots" content="ALL">
+  <title>DirectSound Control FAQ</title>
+</head>
+<body style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);"
+ alink="#ffffff" link="#ffffff" vlink="#ffffff">
+<table style="text-align: left; width: 100%;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><big><big><big>DirectSound
+Control</big></big></big><br>
+      <big><big><big> <small><small><small>"The way it's meant to
+sound..."</small></small></small></big></big></big><br>
+      <hr style="width: 400px; height: 2px;"> </div>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left; height: 1000px;" border="0"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: left; vertical-align: top; width: 150px;"><big><a
+ href="index.html">Home</a><br>
+      <a href="download.html">Download</a><br>
+      <a href="requirements.html">Requirements</a><br>
+      <a href="installation.html">Installation</a><br>
+      <a href="faq.html">FAQ</a><br>
+      <a href="developers.html">Developers</a><br>
+      <a href="limitations.html">Limitations</a><br>
+      <a href="history.html">Version
+History</a><br>
+      <a href="contact.html">Contact</a></big><br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><big>Frequently asked questions
+: </big><br>
+      <br>
+      </span></span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">Q</span>:<span
+ style="font-weight: bold;"> Doom 3 doesn't allow me to enable Surround
+sound, can DSC help me ? <br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">A</span>:
+Follow these steps : <br>
+      </div>
+      <div style="margin-left: 80px;">1.) Download the latest version
+of
+DirectSound Control .<br>
+      </div>
+      <div style="margin-left: 80px;">2.) Unpack the content of the ZIP
+file
+to the Doom 3 directory (NOT in the windows/system(32) !!!!!!!!!!).
+This is where the doom3.exe is located.<br>
+3.) Open the DSoundCtrl.ini file from game directory with
+notepad.<br>
+4.) Find the line "<span style="font-style: italic;">ForceSpeakerConfig=0</span>"
+and change the value from 0 to 1<br>
+5.) Find the line "<span style="font-style: italic;"><span
+ style="font-style: italic;">SpeakerConfig</span></span><span
+ style="font-style: italic;"></span>"
+and change the value to 6<br>
+6.) Save the INI File.<br>
+8.) Start the game.<br>
+      </div>
+      <br>
+      <br>
+      <span style="font-weight: bold;">Q</span>: <span
+ style="font-weight: bold;">My favorite game XXX doesn't
+support
+3D positional audio, can DSC help me ?<br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">A</span>:
+If the game is
+developed
+with 3D sound in mind but the 3D sound is disabled for some reason try
+this : <br>
+      </div>
+      <div style="margin-left: 80px;">1.) Download the latest version
+of
+DirectSound Control .<br>
+      </div>
+      <div style="margin-left: 40px;">
+      <div style="margin-left: 40px;">2.) Unpack the content of the ZIP
+file
+to the game directory (NOT in the windows/system(32) !!!!!!!!!!)<br>
+3.) Open the DSoundCtrl.ini file from game directory with
+notepad.<br>
+4.) Find the line "<span style="font-style: italic;">ForceVoiceManagement=0</span>"
+and change the value from 0 to 1<br>
+5.) Find the line "<span style="font-style: italic;"><span
+ style="font-style: italic;">ForceNonStaticBuffers</span></span><span
+ style="font-style: italic;">=0</span>"
+and change the value from 0 to 1<br>
+6.) Save the INI File.<br>
+8.) Start the game.<br>
+      </div>
+      <br>
+      <br>
+      </div>
+      <span style="font-weight: bold;"></span><span
+ style="font-weight: bold;">Q</span>: <span style="font-weight: bold;">How
+to get 3D positional audio
+with
+DeusEx - Invisible War ? <br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">A</span>:
+Follow these steps : <br>
+      </div>
+      <div style="margin-left: 80px;">1.) Download the latest version
+of
+DirectSound Control .<br>
+      </div>
+      <div style="margin-left: 40px;">
+      <div style="margin-left: 40px;">2.) Unpack the content of the ZIP
+file
+to the DX:IW/system directory (NOT in the windows/system(32) !!!!!!!!!!)<br>
+3.) Open the DSoundCtrl.ini file from the DX:IW/system directory with
+notepad.<br>
+4.) Find the line "<span style="font-style: italic;">ForceHardwareMixing=0</span>"
+and change the value from 0 to 1<br>
+5.) Save the INI File.<br>
+6.) Edit the properties of the DX2 shortcut on the desktop, add the
+DX:IW/system directory to the "Start in" field.<br>
+7.) Start the game, it should work now !!! <br>
+      </div>
+      <br>
+      </div>
+      <span style="font-weight: bold;">Q</span>: <span
+ style="font-weight: bold;">How to get 3D positional
+audio with Mafia ? <br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">A</span>:
+Follow these steps : <br>
+      </div>
+      <div style="margin-left: 80px;">1.) Download the latest version
+of
+DirectSound Control .<br>
+      </div>
+      <div style="margin-left: 40px;">
+      <div style="margin-left: 40px;">2.) Unpack the content of the ZIP
+file
+to the Mafia directory (NOT in the windows/system(32) !!!!!!!!!!)<br>
+3.) Open the DSoundCtrl.ini file from the Mafia directory with notepad.<br>
+4.) Find the line "<span style="font-style: italic;">PreventSpeakerSetup=</span>0"
+and change the value from 0 to 1<br>
+5.) Save the INI File.<br>
+6.) Check that the Windows Speaker Setup&nbsp; in the control
+panel&nbsp; is set to your correct speaker configuration.<br>
+7.) Start the game, it should work now !!! <br>
+      </div>
+      <span style="font-weight: bold;"><br>
+      <br>
+      </span></div>
+      <span style="font-weight: bold;">Q</span>: <span
+ style="font-weight: bold;">I'm using the onboard sound of my nVidia
+nForce 1/2 board and I've got problems with your DLL.<br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;">A</span>:
+It seems that the
+nForce
+chipset has problems with hardware mixed buffers. Please follow these
+rules :<br>
+      </div>
+      <ul>
+        <ul>
+          <li>DON'T enable voice management</li>
+          <li>DON'T force hardware mixing with this chipset.</li>
+          <li>Try "<span style="font-style: italic;">ForceSoftwareMixing=1</span>"
+if you have problems with games, this might help<br>
+          </li>
+        </ul>
+      </ul>
+      <div style="margin-left: 40px;"><!--emo&:rolleyes:--><!--endemo--></div>
+      </div>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;">Q</span>: <span style="font-weight: bold;">The
+DSC DLL won't be loaded, I'm using Win9x/ME. Why&nbsp; ?<br>
+      <br>
+      </span></span> </span></span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;">A</span>: </span></span></span>Try to
+restart your computer and don't start
+another application beforce you start the application that should be
+uses with DSC. I don't recommend and support Win9x/ME with DSC.<span
+ style="font-weight: bold;"><span style="font-weight: bold;"></span></span><br>
+      <span style="font-weight: bold;"><span style="font-weight: bold;"></span></span></div>
+      <span style="font-weight: bold;"><span style="font-weight: bold;">
+      </span></span><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><br>
+Q</span>: <span style="font-weight: bold;">I
+see a major speed drop when I'm using the DSC dll. Why ?<br>
+      <br>
+      </span></span>
+      <div style="margin-left: 40px;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;">A</span>: </span>You're using the
+developer version of DSC with logging
+enabled. Download the public version, overwrite the DSOUND.DLL and try
+again.<br>
+      </div>
+      <br>
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table
+ style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><small><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

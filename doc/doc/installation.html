@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Keywords"
+ content="DirectSound, dsound.dll, DirectSound Control, DSC, Tweak, Mafia, DX:IW, DeusEx2, Speaker Setup, Arne Bockholdt, www.bockholdt.com, logging, interface, method, wrapper, Voice Management, Primary Buffer, debug">
+  <meta name="author" content="Arne Bockholdt">
+  <meta name="copyright"
+ content="Copyright 2003-2004 (C) Arne Bockholdt">
+  <meta name="description" content="Homepage of DirectSoundControl">
+  <meta name="generator" content="Mozilla 1.7a Composer">
+  <meta name="language" content="en">
+  <meta name="distribution" content="global">
+  <meta name="robots" content="ALL">
+  <title>DirectSound Control Installation</title>
+</head>
+<body style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);"
+ alink="#ffffff" link="#ffffff" vlink="#ffffff">
+<table style="text-align: left; width: 100%;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><big><big><big>DirectSound
+Control</big></big></big><br>
+      <big><big><big> <small><small><small>"The way it's meant to
+sound..."</small></small></small></big></big></big><br>
+      <hr style="width: 400px; height: 2px;"> </div>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left; height: 2500px;" border="0"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: left; vertical-align: top; width: 150px;"><big><a
+ href="index.html">Home</a><br>
+      <a href="download.html">Download</a><br>
+      <a href="requirements.html">Requirements</a><br>
+      <a href="installation.html">Installation</a><br>
+      <a href="faq.html">FAQ</a><br>
+      <a href="developers.html">Developers</a><br>
+      <a href="limitations.html">Limitations</a><br>
+      <a href="history.html">Version
+History</a><br>
+      <a href="contact.html">Contact</a></big><br>
+      <br>
+      </td>
+      <td style="vertical-align: top;">
+      <div style="text-align: left;"> </div>
+      <div style="text-align: center;">
+      <div style="text-align: left;"><big style="font-weight: bold;">Installation
+: </big><br>
+      </div>
+      <div style="text-align: left;"><span style="font-weight: bold;"> <br>
+      </span>
+      <div style="margin-left: 40px;">Follow these steps to install and
+run
+DirectSound Control : <br>
+      </div>
+      <span style="font-weight: bold;"><br>
+      </span>
+      <div style="margin-left: 80px;">
+      <ol>
+        <li>Read and understand the included documentation. Understand
+the
+WARNING below !!!!<br>
+        </li>
+        <li>Copy the included &#8220;dsound.dll&#8221; and "dsoundctrl.ini" files
+to the
+application directory.</li>
+        <li>Change the config file (see below) and run the application.</li>
+      </ol>
+      </div>
+      <div style="margin-left: 120px;"><span
+ style="font-style: italic; font-weight: bold; text-decoration: underline;">Warning:</span><br>
+      <br>
+DON&#8217;T COPY THIS FILE TO THE WINDOWS SYSTEM DIRECTORY. THIS IS NOT A
+REPLACEMENT FOR THE ORIGINAL DIRECTX DIRECTSOUND DLL !!!!! THIS IS A
+WRAPPER DLL !!!!<br>
+      </div>
+      <div style="margin-left: 80px;"><br>
+      </div>
+      </div>
+      </div>
+      <span style="font-weight: bold;"><big> Configuration : </big><br>
+      <br>
+      </span> <br>
+      <div style="margin-left: 40px;">The configuration is saved in the
+"dsoundctrl.ini" INI File. This MUST be in the same directory as the
+"dsound.dll". The default configuration is transparent to the
+application and does NOT change anything.<br>
+      <br>
+Here are some pre-configured DSOUNDCTRL.INI files. Extract all files
+from the DSC.ZIP to the games directory and extract the ZIP file below
+to the same directory, overwriting the exising&nbsp; file : <br>
+      <ul>
+        <li><a href="http://www.bockholdt.com/dsc/doom3.zip">ID
+Software : Doom 3<br>
+          </a></li>
+        <li><a href="http://www.bockholdt.com/dsc/dxiw.zip">Illusion
+Softworks : Mafia</a></li>
+        <li><a href="http://www.bockholdt.com/dsc/dxiw.zip">ION Storm :
+Deus
+Ex:Invisible War</a></li>
+        <li><a href="http://www.bockholdt.com/dsc/soft3d.zip">Generic
+settings for games that uses software 3D positional audio</a><br>
+        </li>
+      </ul>
+      </div>
+      <div style="margin-left: 40px;">If you want to edit the
+configuration
+file, here is the description of the options
+: <br>
+      <br>
+      <span style="font-style: italic;">Num2DBuffers=0...XX</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=hardware default)<br>
+Maximum number of hardware mixed 2d buffers reported to the
+application. MUST be lower or equal than the hardware default.<br>
+      </div>
+      <br>
+      <br>
+      <span style="font-style: italic;">Num3DBuffers=0...XX</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=hardware default)<br>
+Maximum number of hardware mixed 3d buffers.&nbsp; MUST be lower or
+equal than the hardware default.<br>
+      </div>
+      <br>
+      <br>
+      <span style="font-style: italic;">ForceCertification=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=driver default,
+disabled)<br>
+Enables/Disables WHQL certification report<br>
+      </div>
+      <br>
+      <br>
+      <span style="font-style: italic;">ForceVoiceManagement=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=application
+default,
+disabled)<br>
+Enables/Disables forcing of voice management. This can't be used
+together with "ForceSoftwareMixing" and "ForceHardwareMixing". This is
+the first option you should change to 1 if you have problems with a
+game. This options enables the DirectX build-in voice managements and
+overrides the developers placement of the sound buffers. This options
+will enable 3D positional audio for many games that have this feature
+disabled for whatever reason. You should always set&nbsp; <span
+ style="font-style: italic;">ForceNonStaticBuffers</span> to<span
+ style="font-style: italic;"> 1.<br>
+      </span></div>
+      <br>
+      <br>
+      <span style="font-style: italic;">ForceSoftwareMixing=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=application
+default,
+disabled)<br>
+Enables/Disables forcing creation of software mixed buffers <br>
+      </div>
+      <br>
+      <br>
+      <span style="font-style: italic;">ForceHardwareMixing=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=application
+default,
+disabled)<br>
+Enables/Disables forcing creation of hardware mixed buffers (caution
+!!). Set this to 1 if you have problems with games like DEUS EX :
+Invisible War ! Before you set this to 1 try to enable the Voice
+Management to see if this works. Enabling Voice Management is much
+safer than this option. <br>
+      </div>
+      <br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">ForceNonStaticBuffers=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=application default)<br>
+Enables/Disables forcing of using non-static buffers. Static buffers
+are obsolete with PCI-cards. This should always be enabled when
+"ForceVoiceManagement" is set to 1.<br>
+      </div>
+      <br>
+      <br>
+      <span style="font-style: italic;">PreventSpeakerSetup=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=application
+default,
+disabled)<br>
+Enables/Disables prevention changing the speaker setup configuration.
+Set this to 1 if you have problems with games like MAFIA etc.<br>
+      <br>
+      <br>
+      </div>
+      <span style="font-style: italic;">ForceExclusiveMode=0/1</span><br>
+      <div style="margin-left: 40px;"><br>
+Default : 0 (=application default)<br>
+Enables/Disables forcing of exclusive cooperation level.<br>
+      <br>
+      <br>
+      </div>
+      <span style="font-style: italic;">ForceHQ3DSoftMixing=0/1</span><br>
+      <div style="margin-left: 40px;"><br>
+Default : 0 (=application default)<br>
+Enables/Disables forcing of usage of the high quality HRTF algorithm
+(software mixing only). Set this to 1 to get better 3D sound quality
+for applications that uses software mixing.<br>
+      <br>
+      </div>
+      </div>
+      <div style="margin-left: 40px;"><span style="font-style: italic;"><br>
+ForcePrimaryBufferFormat=0/1</span><br>
+      </div>
+      <div style="margin-left: 40px;">
+      <div style="margin-left: 40px;"><br>
+Default : 0 (=application default)<br>
+Enables/Disables forcing of a specified primary buffer format. Set this
+to 1 to get better sound quality
+for applications that don't set this parameters and soundcards that
+defaults to 8 Bit primary buffer.<br>
+If this option is set to one you can specify the output format with the
+following settings . <br>
+      <br>
+      </div>
+      <span style="font-style: italic;">PrimaryBufferBits=x</span><br>
+      <span style="font-style: italic;"> </span><br>
+      <div style="margin-left: 40px;">Default : 16<br>
+Number of bits per sample. 16 is default, some soundcards are capable
+of using 24 or 32 bits per sample. <span style="font-style: italic;"></span><br>
+      <span style="font-style: italic;"></span></div>
+      <br>
+      <span style="font-style: italic;">PrimaryBufferSamples=xxxxx</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 44100<br>
+Number of samples per second. 44100&nbsp; is default, some soundcards
+are capable of using 48000, 96000 or 192000 samples per second. <br>
+      </div>
+      <br>
+      <span style="font-style: italic;">PrimaryBufferChannels=x</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 2<br>
+Number of channels. 2 (=Stereo)&nbsp; is default.<br>
+      <br>
+      </div>
+      <span style="font-style: italic;">ForceSpeakerConfig=0/1</span><br>
+      <br>
+      <div style="margin-left: 40px;">Default : 0 (=system default)<br>
+      </div>
+      <div style="margin-left: 40px;">Enables/Disables forcing of a the
+report to the app of a certain speaker configuration. Some applications
+needs certain speaker configurations to enable 3D sound (e.g. Doom 3). <br>
+      <br>
+      </div>
+SpeakerConfig=x<br>
+      <div style="margin-left: 40px;"><br>
+Default : 6 (=5.1)<br>
+Speaker configuration that will be returned with
+IDirectSound::GetSpeakerConfig() function when ForceSpeakerConfig == 1<br>
+      <br>
+The following values are defined : <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+      <div style="margin-left: 40px;">
+      <table style="text-align: left; width: 179px; height: 200px;"
+ border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;">Headphone<br>
+            </td>
+            <td style="vertical-align: top;">1<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">Mono<br>
+            </td>
+            <td style="vertical-align: top;">2<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">Quad<br>
+            </td>
+            <td style="vertical-align: top;">3<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">Stereo<br>
+            </td>
+            <td style="vertical-align: top;">4<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">Surround<br>
+            </td>
+            <td style="vertical-align: top;">5<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">5.1<br>
+            </td>
+            <td style="vertical-align: top;">6<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">7.1<br>
+            </td>
+            <td style="vertical-align: top;">7<br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      </div>
+      <br>
+      <br>
+      </div>
+      <div style="margin-left: 40px;">
+      <div style="margin-left: 40px;"><br>
+      </div>
+      </div>
+      </div>
+      <br>
+      <span style="font-weight: bold;"><span style="font-weight: bold;"><big><br>
+      </big></span></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table
+ style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><small><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

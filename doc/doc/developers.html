@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="Keywords"
+ content="DirectSound, dsound.dll, DirectSound Control, DSC, Tweak, Mafia, DX:IW, DeusEx2, Speaker Setup, Arne Bockholdt, www.bockholdt.com, logging, interface, method, wrapper, Voice Management, Primary Buffer, debug">
+  <meta name="author" content="Arne Bockholdt">
+  <meta name="copyright"
+ content="Copyright 2003-2004 (C) Arne Bockholdt">
+  <meta name="description" content="Homepage of DirectSoundControl">
+  <meta name="generator" content="Mozilla 1.7a Composer">
+  <meta name="language" content="en">
+  <meta name="distribution" content="global">
+  <meta name="robots" content="ALL">
+  <title>DirectSound Control for Developers</title>
+</head>
+<body alink="#ffffff" vlink="#ffffff" link="#ffffff"
+ style="color: rgb(192, 192, 192); background-color: rgb(0, 0, 0);">
+<table style="text-align: left; width: 100%;" border="0" cellspacing="2"
+ cellpadding="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><big><big><big>DirectSound
+Control</big></big></big><br>
+      <big><big><big> <small><small><small>"The way it's meant to
+sound..."</small></small></small></big></big></big><br>
+      <hr style="width: 400px; height: 2px;"> </div>
+      <span style="font-weight: bold;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="text-align: left; height: 1000px;" border="0"
+ cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td style="text-align: left; vertical-align: top; width: 150px;"><big><a
+ href="index.html">Home</a><br>
+      <a href="download.html">Download</a><br>
+      <a href="requirements.html">Requirements</a><br>
+      <a href="installation.html">Installation</a><br>
+      <a href="faq.html">FAQ</a><br>
+      <a href="developers.html">Developers</a><br>
+      <a href="limitations.html">Limitations</a><br>
+      <a href="history.html">Version
+History</a><br>
+      <a href="contact.html">Contact</a></big><br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"> <span
+ style="font-weight: bold;"> </span><span style="font-weight: bold;"><big><span
+ style="font-weight: bold;">DSC
+build for developers: </span></big><br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;">With version V1.4 the logging
+functionality has been removed from the public build because of
+performance
+reasons. If you need a version that logs all calls to the DirectSound
+functions and interface methods please contact me and I will send you
+the latest version.<br>
+The developer version adds the following features : <br>
+      <ul>
+        <li>Logging of all function/method calls with timestamps</li>
+        <li>Logging of interface instances with instance ID<br>
+        </li>
+        <li>Logging of debug runtime information (OS+DirectX version,
+installed sound card and driver etc.)<br>
+        </li>
+        <li>Output in CSV format (easy readable with Excel etc.)</li>
+        <li>Beeping on load/unload</li>
+        <li>No static linking to C-Runtime / MFC Dlls.</li>
+      </ul>
+This version is made to help you debug your application that uses
+DirectSound or to track down bugs in the implementation of 3D
+positional audio in games. It is transparent to every application, you
+can debug any application without the need to recompile the
+application, all is done within DSC for Developers.<br>
+      <br>
+      </div>
+      <big><span style="font-weight: bold;">DirectSound functions
+supported : </span></big><br>
+      <div style="margin-left: 40px;"><br>
+All of the export functions of the original DirectX DSound.dll are
+supported : <br>
+      <ul>
+        <li>DirectSoundCreate</li>
+        <li>DirectSoundEnumerateA</li>
+        <li>DirectSoundEnumerateW</li>
+        <li>DllCanUnloadNow&nbsp;&nbsp;&nbsp;</li>
+        <li>DllGetClassObject&nbsp;&nbsp;</li>
+        <li>DirectSoundCaptureCreate</li>
+        <li>DirectSoundCaptureEnumerateA</li>
+        <li>DirectSoundCaptureEnumerateW</li>
+        <li>GetDeviceID</li>
+        <li>DirectSoundFullDuplexCreate</li>
+        <li>DirectSoundCreate8</li>
+        <li>DirectSoundCaptureCreate8</li>
+      </ul>
+      </div>
+      <span style="font-weight: bold;"><big>DirectSound interfaces
+supported : </big><br>
+      <br>
+      </span>
+      <div style="margin-left: 40px;">V1.5 supports the following
+interfaces
+: <br>
+      <ul>
+        <li>IDirectSound</li>
+        <li>IDirectSound8</li>
+        <li>IDirectSoundBuffer</li>
+        <li>IDirectSoundBuffer8</li>
+        <li>IDirectSound3DBuffer</li>
+        <li>IDirectSound3DBuffer8</li>
+        <li>IDirectSound3DListener</li>
+        <li>IDirectSound3DListener8</li>
+        <li>IClassFactory</li>
+      </ul>
+The others interfaces won't be wrapped but will be returned from the
+original DLL, so the full functionality is guaranteed.<br>
+      <span style="font-weight: bold;"></span></div>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table
+ style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><small><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>
