@@ -545,7 +545,7 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, 
 
 	g_pAppDSEnumCallbackA = pDSEnumCallback;
 
-	return g_pDirectSoundEnumerateAfunc( DSDLLEnumCallbackA, pContext );
+	return g_pDirectSoundEnumerateAfunc( (LPDSENUMCALLBACKA)DSDLLEnumCallbackA, pContext );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -561,7 +561,7 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, 
 
 	g_pAppDSEnumCallbackW = pDSEnumCallback;
 
-	return g_pDirectSoundEnumerateWfunc( DSDLLEnumCallbackW, pContext );
+	return g_pDirectSoundEnumerateWfunc( (LPDSENUMCALLBACKW)DSDLLEnumCallbackW, pContext );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
