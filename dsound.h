@@ -6,6 +6,10 @@
 *  Content:    DirectSound include file
 *
 **************************************************************************/
+/* 
+*  Updated for DSoundCtrl wrapper with dsound.h.patch in 2017
+*
+**************************************************************************/
 
 #define COM_NO_WINDOWS_H
 #include <objbase.h>
