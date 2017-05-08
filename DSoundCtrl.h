@@ -22,6 +22,10 @@
 // DSoundCtrl.h : main header file for the DSoundCtrl DLL
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Updated by Elisha Riedlinger 2017
+//
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -31,7 +35,55 @@
 	#error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"		// main symbols
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+#ifdef DSOUNDCTRL_EXPORTS
+#define DSOUNDCTRL_API __declspec(dllexport)
+#else
+#define DSOUNDCTRL_API
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+#define PROGRAM_VERSION					"V1.82"
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+#define INI_FILE_NAME					".\\dsoundctrl.ini"
+#define LOG_FILE_NAME					"dsoundctrl.csv"
+
+#define SECTION_TWEAK					"Tweak"
+
+#ifdef ENABLE_LOG
+	#define SECTION_DEBUG					"Debug"
+
+	#define KEY_LOGSYSTEM					"LogSystem"
+	#define KEY_LOGDIRECTSOUND				"LogIDirectSound"
+	#define KEY_LOGDIRECTSOUNDBUFFER		"LogIDirectSoundBuffer"
+	#define KEY_LOGDIRECTSOUND3DBUFFER		"LogIDirectSound3DBuffer"
+	#define KEY_LOGDIRECTSOUND3DLISTENER	"LogIDirectSound3DListener"
+	#define KEY_DEBUGBEEP					"DebugBeep"
+#endif // ENABLE_LOG
+
+#define KEY_NUM2DBUFF					"Num2DBuffers"
+#define KEY_NUM3DBUFF					"Num3DBuffers"
+#define KEY_FORCECERT					"ForceCertification"
+#define KEY_FORCEEXCLUSIVEMODE			"ForceExclusiveMode" 
+#define KEY_FORCESOFTMIX				"ForceSoftwareMixing"
+#define KEY_FORCEHARDMIX				"ForceHardwareMixing"
+#define KEY_PREVSPEAKSETUP				"PreventSpeakerSetup"
+#define KEY_HQSOFT3D					"ForceHQ3DSoftMixing"
+#define KEY_FORCENONSTATIC				"ForceNonStaticBuffers"
+#define KEY_FORCEVOICEMANAGEMENT		"ForceVoiceManagement"
+#define KEY_FORCEPRIMARYBUFFERFORMAT	"ForcePrimaryBufferFormat"
+#define KEY_PRIMARYBUFFERBITS			"PrimaryBufferBits"
+#define KEY_PRIMARYBUFFERSAMPLES		"PrimaryBufferSamples"
+#define KEY_PRIMARYBUFFERCHANNELS		"PrimaryBufferChannels"
+
+#define KEY_WORKAROUNDSTOPPEDDRIVER		"EnableStoppedDriverWorkaround"
+
+#define KEY_FORCESPEAKERCONFIG			"ForceSpeakerConfig"
+#define KEY_SPEAKERCONFIG				"SpeakerConfig"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43,18 +95,39 @@ extern "C" {  // only need to export C interface if
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DirectSoundCreate8func				g_pDirectSoundCreate8 = NULL;
-DirectSoundCreatefunc				g_pDirectSoundCreate = NULL;
-GetDeviceIDfunc						g_pGetDeviceIDfunc = NULL;
-DirectSoundEnumerateAfunc			g_pDirectSoundEnumerateAfunc = NULL;
-DirectSoundEnumerateWfunc			g_pDirectSoundEnumerateWfunc = NULL;
-DirectSoundCaptureCreatefunc		g_pDirectSoundCaptureCreatefunc = NULL;
-DirectSoundCaptureEnumerateAfunc	g_pDirectSoundCaptureEnumerateAfunc = NULL;
-DirectSoundCaptureEnumerateWfunc	g_pDirectSoundCaptureEnumerateWfunc = NULL;
-DirectSoundCaptureCreate8func		g_pDirectSoundCaptureCreate8func = NULL;
-DirectSoundFullDuplexCreatefunc		g_pDirectSoundFullDuplexCreatefunc = NULL;
-DllGetClassObjectfunc				g_pDllGetClassObjectfunc = NULL;
-DllCanUnloadNowfunc					g_pDllCanUnloadNowfunc = NULL;
+#undef DirectSoundCreate
+
+	DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter);
+	DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext);
+	DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext);
+
+	DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE *ppDSC, LPUNKNOWN pUnkOuter);
+	DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext);
+	DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext);
+
+	DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *ppDS8, LPUNKNOWN pUnkOuter);
+	DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE8 *ppDSC8, LPUNKNOWN pUnkOuter);
+	DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice,
+		LPCDSCBUFFERDESC pcDSCBufferDesc, LPCDSBUFFERDESC pcDSBufferDesc, HWND hWnd,
+		DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX* ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 *ppDSCBuffer8,
+		LPDIRECTSOUNDBUFFER8 *ppDSBuffer8, LPUNKNOWN pUnkOuter);
+
+	DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest);
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+	DirectSoundCreate8func				g_pDirectSoundCreate8 = NULL;
+	DirectSoundCreatefunc				g_pDirectSoundCreate = NULL;
+	GetDeviceIDfunc						g_pGetDeviceIDfunc = NULL;
+	DirectSoundEnumerateAfunc			g_pDirectSoundEnumerateAfunc = NULL;
+	DirectSoundEnumerateWfunc			g_pDirectSoundEnumerateWfunc = NULL;
+	DirectSoundCaptureCreatefunc		g_pDirectSoundCaptureCreatefunc = NULL;
+	DirectSoundCaptureEnumerateAfunc	g_pDirectSoundCaptureEnumerateAfunc = NULL;
+	DirectSoundCaptureEnumerateWfunc	g_pDirectSoundCaptureEnumerateWfunc = NULL;
+	DirectSoundCaptureCreate8func		g_pDirectSoundCaptureCreate8func = NULL;
+	DirectSoundFullDuplexCreatefunc		g_pDirectSoundFullDuplexCreatefunc = NULL;
+	DllGetClassObjectfunc				g_pDllGetClassObjectfunc = NULL;
+	DllCanUnloadNowfunc					g_pDllCanUnloadNowfunc = NULL;
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 

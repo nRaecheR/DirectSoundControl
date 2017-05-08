@@ -18,6 +18,10 @@
 // along with Direct Sound Control.  If not, see <http://www.gnu.org/licenses/>.
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Updated by Elisha Riedlinger 2017
+//
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // stdafx.h : include file for standard system include files,
@@ -51,60 +55,18 @@
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 
 #include <afxwin.h>         // MFC core and standard components
-#include <afxext.h>         // MFC extensions
+//#include <afxext.h>         // MFC extensions
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <shlwapi.h>		// For shell functions
+//#include <shlwapi.h>		// For shell functions
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <mmreg.h>
-#include "mmsystem.h"
-#include "dsound.h"
-#include "exports.h"
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-#define INI_FILE_NAME					".\\dsoundctrl.ini"
-#define LOG_FILE_NAME					"dsoundctrl.csv"
-
-#define SECTION_TWEAK					"Tweak"
-
-#ifdef ENABLE_LOG
-	#define SECTION_DEBUG					"Debug"
-
-	#define KEY_LOGSYSTEM					"LogSystem"
-	#define KEY_LOGDIRECTSOUND				"LogIDirectSound"
-	#define KEY_LOGDIRECTSOUNDBUFFER		"LogIDirectSoundBuffer"
-	#define KEY_LOGDIRECTSOUND3DBUFFER		"LogIDirectSound3DBuffer"
-	#define KEY_LOGDIRECTSOUND3DLISTENER	"LogIDirectSound3DListener"
-	#define KEY_DEBUGBEEP					"DebugBeep"
-#endif // ENABLE_LOG
-
-#define KEY_NUM2DBUFF					"Num2DBuffers"
-#define KEY_NUM3DBUFF					"Num3DBuffers"
-#define KEY_FORCECERT					"ForceCertification"
-#define KEY_FORCEEXCLUSIVEMODE			"ForceExclusiveMode" 
-#define KEY_FORCESOFTMIX				"ForceSoftwareMixing"
-#define KEY_FORCEHARDMIX				"ForceHardwareMixing"
-#define KEY_PREVSPEAKSETUP				"PreventSpeakerSetup"
-#define KEY_HQSOFT3D					"ForceHQ3DSoftMixing"
-#define KEY_FORCENONSTATIC				"ForceNonStaticBuffers"
-#define KEY_FORCEVOICEMANAGEMENT		"ForceVoiceManagement"
-#define KEY_FORCEPRIMARYBUFFERFORMAT	"ForcePrimaryBufferFormat"
-#define KEY_PRIMARYBUFFERBITS			"PrimaryBufferBits"
-#define KEY_PRIMARYBUFFERSAMPLES		"PrimaryBufferSamples"
-#define KEY_PRIMARYBUFFERCHANNELS		"PrimaryBufferChannels"
-
-#define KEY_WORKAROUNDSTOPPEDDRIVER		"EnableStoppedDriverWorkaround"
-
-#define KEY_FORCESPEAKERCONFIG			"ForceSpeakerConfig"
-#define KEY_SPEAKERCONFIG				"SpeakerConfig"
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-#define PROGRAM_VERSION					"V1.82"
+//#include <mmreg.h>
+//#include "mmsystem.h"
+//#include "dsound.h"
+//#include "exports.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 

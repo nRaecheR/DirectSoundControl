@@ -215,7 +215,6 @@
     <ClInclude Include="dsound.h" />
     <ClInclude Include="DSoundCtrl.h" />
     <ClInclude Include="DSoundTypes.h" />
-    <ClInclude Include="Exports.h" />
     <ClInclude Include="IDirectSound3DBufferEx.h" />
     <ClInclude Include="IDirectSound3DListenerEx.h" />
     <ClInclude Include="IDirectSoundBufferEx.h" />
