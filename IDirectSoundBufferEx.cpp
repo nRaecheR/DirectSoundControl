@@ -23,7 +23,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "StdAfx.h"
+#include <atlstr.h>
 #include "mmsystem.h"
 #include "dsound.h"
 #include "idirectsoundBufferex.h"

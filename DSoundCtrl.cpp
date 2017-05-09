@@ -27,7 +27,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include <windows.h>
+#include <stdio.h>
+#include <atlstr.h>
+#include <atltime.h>
 #include "mmsystem.h"
 #include "dsound.h"
 #include "DSoundTypes.h"
@@ -37,36 +40,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef _DEBUG
-#define new DEBUG_NEW
+//#define new DEBUG_NEW		//<----TODO: fix this line
 #endif
 
-//////////////////////////////////////////////////////////////////////////////////////////////
-//
-//	Note!
-//
-//		If this DLL is dynamically linked against the MFC
-//		DLLs, any functions exported from this DLL which
-//		call into MFC must have the AFX_MANAGE_STATE macro
-//		added at the very beginning of the function.
-//
-//		For example:
-//
-//		extern "C" BOOL PASCAL EXPORT ExportedFunction()
-//		{
-//			AFX_MANAGE_STATE(AfxGetStaticModuleState());
-//			// normal function body here
-//		}
-//
-//		It is very important that this macro appear in each
-//		function, prior to any calls into MFC.  This means that
-//		it must appear as the first statement within the 
-//		function, even before any object variable declarations
-//		as their constructors may generate calls into the MFC
-//		DLL.
-//
-//		Please see MFC Technical Notes 33 and 58 for additional
-//		details.
-//
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 LPDSENUMCALLBACKA	g_pAppDSEnumCallbackA;
@@ -97,7 +73,7 @@ void LogMessage(const char* szClassName, void* pInstance, char* szMessage )
 	::fwrite( buffer, 1 , strlen( buffer), f );
 	::fclose( f );
 
-	TRACE( buffer );
+	//TRACE( buffer );		//<----TODO: fix this line
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,7 +98,7 @@ CString GetDirectXVersionFromReg()
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-CString GetOSVersion()
+CString GetOSVersion()		//<----TODO: update this function
 {
 	CString			sTemp = "";
 	CString			sOSName = "Unknown platform";
@@ -190,13 +166,12 @@ BOOL CALLBACK DSEnumCallback( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,  LPC
 
 #endif  // ENABLE_LOG
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////
 // CDSoundCtrlApp
+//
+// The one and only CDSoundCtrlApp object
 
-BEGIN_MESSAGE_MAP(CDSoundCtrlApp, CWinApp)
-END_MESSAGE_MAP()
-
+CDSoundCtrlApp theApp;
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // CDSoundCtrlApp construction
@@ -239,20 +214,11 @@ CDSoundCtrlApp::~CDSoundCtrlApp()
 #endif // ENABLE_LOG
 }
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////
-// The one and only CDSoundCtrlApp object
-
-CDSoundCtrlApp theApp;
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
 // CDSoundCtrlApp initialization
 
 BOOL CDSoundCtrlApp::InitInstance()
 {
-	CWinApp::InitInstance();
-
 	//
 	// Read configuration from file
 	//
@@ -478,14 +444,12 @@ bool CDSoundCtrlApp::EnumCallback( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,
 
 DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCreate called...");
 #endif // ENABLE_LOG
 
-	ASSERT( g_pDirectSoundCreate != NULL );
+	//ASSERT( g_pDirectSoundCreate != NULL );		//<----TODO: fix this line
 
 #ifdef ENABLE_LOG
 	if( g_bDebugBeep == true )
@@ -543,8 +507,6 @@ BOOL DSDLLEnumCallbackW(LPGUID  lpGuid,    LPCWSTR  lpcstrDescription,  LPCWSTR 
 
 DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundEnumerateA called...");
@@ -559,8 +521,6 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, 
 
 DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundEnumerateW called...");
@@ -575,8 +535,6 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, 
 
 DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE *ppDSC, LPUNKNOWN pUnkOuter)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCaptureCreate called...");
@@ -589,8 +547,6 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSO
 
 DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCaptureEnumerateA called...");
@@ -603,8 +559,6 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCal
 
 DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCaptureEnumerateW called...");
@@ -617,8 +571,6 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCal
 
 DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *ppDS8, LPUNKNOWN pUnkOuter)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCreate8 called...");
@@ -627,7 +579,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *
 		Beep(2000, 100);
 #endif // ENABLE_LOG
 
-	ASSERT( g_pDirectSoundCreate8 != NULL );
+	//ASSERT( g_pDirectSoundCreate8 != NULL );		//<----TODO: fix this line
 
 	IDirectSound8Ex* pDSX = new IDirectSound8Ex;
 
@@ -648,8 +600,6 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *
 
 DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE8 *ppDSC8, LPUNKNOWN pUnkOuter)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundCaptureCreate8 called...");
@@ -665,8 +615,6 @@ DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, 
         DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX* ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 *ppDSCBuffer8,
         LPDIRECTSOUNDBUFFER8 *ppDSBuffer8, LPUNKNOWN pUnkOuter)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DirectSoundFullDuplexCreate called...");
@@ -682,8 +630,6 @@ DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, 
 
 DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "GetDeviceID called...");
@@ -696,8 +642,6 @@ DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest)
 
 STDAPI DllCanUnloadNow(void)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
 		LogMessage( g_cszClassName, NULL, "DllCanUnloadNow called...");
@@ -709,8 +653,6 @@ STDAPI DllCanUnloadNow(void)
 
 STDAPI DllGetClassObject(IN REFCLSID rclsid, IN REFIID riid, OUT LPVOID FAR* ppv)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-
 	*ppv = NULL;
 
 	if (( rclsid != CLSID_DirectSound ) && ( rclsid != CLSID_DirectSound8 ))
@@ -759,3 +701,24 @@ STDAPI DllGetClassObject(IN REFCLSID rclsid, IN REFIID riid, OUT LPVOID FAR* ppv
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+// Dll main function
+bool APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
+{
+	UNREFERENCED_PARAMETER(hModule);
+	UNREFERENCED_PARAMETER(lpReserved);
+
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:
+		theApp.InitInstance();
+		break;
+	case DLL_THREAD_ATTACH:
+		break;
+	case DLL_THREAD_DETACH:
+		break;
+	case DLL_PROCESS_DETACH:
+		break;
+	}
+	return true;
+}

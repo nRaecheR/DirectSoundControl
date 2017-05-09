@@ -31,12 +31,6 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
-#endif
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
 #ifdef DSOUNDCTRL_EXPORTS
 #define DSOUNDCTRL_API __declspec(dllexport)
 #else
@@ -190,7 +184,7 @@ bool			g_bDebugBeep					=	true;
 // See DSoundCtrl.cpp for the implementation of this class
 //
 
-class CDSoundCtrlApp : public CWinApp
+class CDSoundCtrlApp
 {
 public:
 	CDSoundCtrlApp();
@@ -204,7 +198,6 @@ public:
 	bool EnumCallback( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,  LPCSTR  lpcstrModule );
 #endif // ENABLE_LOG
 
-	DECLARE_MESSAGE_MAP()
 	// Reads a configuration value from INI File
 	int ReadConfig(char* szSection, char* szKey, int nDefault);
 	
