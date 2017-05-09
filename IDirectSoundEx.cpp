@@ -24,6 +24,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <atlstr.h>
+#include <assert.h>
 #include "mmsystem.h"
 #include "dsound.h"
 #include "idirectsoundex.h"
@@ -299,6 +300,8 @@ HRESULT IDirectSound8Ex::CreateSoundBuffer    (LPCDSBUFFERDESC pcDSBufferDesc, L
 	#ifdef ENABLE_LOG
 			if(( g_bLogDirectSound == true ) && ( hResult != S_OK ))
 				::LogMessage(m_cszClassName, this, "ERROR: FORCING PRIMARY BUFFER FORMAT failed....");
+	#else
+			UNREFERENCED_PARAMETER(hResult);
 	#endif // ENABLE_LOG
 		}
 	}
@@ -321,9 +324,9 @@ HRESULT IDirectSound8Ex::GetCaps              (LPDSCAPS pDSCaps)
 	{
 		if( pDSCaps->dwMaxHwMixingAllBuffers >= (DWORD) g_nNum2DBuffers )
 		{
-			//ASSERT( g_nNum2DBuffers >= (int)( pDSCaps->dwMaxHwMixingAllBuffers - pDSCaps->dwFreeHwMixingAllBuffers ));		//<----TODO: fix this line
-			//ASSERT( g_nNum2DBuffers >= (int)( pDSCaps->dwMaxHwMixingStaticBuffers		-	pDSCaps->dwFreeHwMixingStaticBuffers ));		//<----TODO: fix this line
-			//ASSERT( g_nNum2DBuffers >= (int)( pDSCaps->dwFreeHwMixingStreamingBuffers	-	pDSCaps->dwMaxHwMixingStreamingBuffers ));		//<----TODO: fix this line
+			assert( g_nNum2DBuffers >= (int)( pDSCaps->dwMaxHwMixingAllBuffers - pDSCaps->dwFreeHwMixingAllBuffers ));
+			assert( g_nNum2DBuffers >= (int)( pDSCaps->dwMaxHwMixingStaticBuffers		-	pDSCaps->dwFreeHwMixingStaticBuffers ));
+			assert( g_nNum2DBuffers >= (int)( pDSCaps->dwFreeHwMixingStreamingBuffers	-	pDSCaps->dwMaxHwMixingStreamingBuffers ));
 
 			pDSCaps->dwFreeHwMixingAllBuffers		=	g_nNum2DBuffers - ( pDSCaps->dwMaxHwMixingAllBuffers		-	pDSCaps->dwFreeHwMixingAllBuffers );
 			pDSCaps->dwFreeHwMixingStaticBuffers	=	g_nNum2DBuffers - ( pDSCaps->dwMaxHwMixingStaticBuffers		-	pDSCaps->dwFreeHwMixingStaticBuffers );
@@ -351,9 +354,9 @@ HRESULT IDirectSound8Ex::GetCaps              (LPDSCAPS pDSCaps)
 	{
 		if( pDSCaps->dwMaxHw3DAllBuffers >= (DWORD) g_nNum3DBuffers )
 		{
-			//ASSERT( g_nNum3DBuffers >= (int)( pDSCaps->dwMaxHw3DAllBuffers - pDSCaps->dwFreeHw3DAllBuffers ));		//<----TODO: fix this line
-			//ASSERT( g_nNum3DBuffers >= (int)( pDSCaps->dwMaxHw3DStaticBuffers		-	pDSCaps->dwFreeHw3DStaticBuffers ));		//<----TODO: fix this line
-			//ASSERT( g_nNum3DBuffers >= (int)( pDSCaps->dwFreeHw3DStreamingBuffers	-	pDSCaps->dwMaxHw3DStreamingBuffers ));		//<----TODO: fix this line
+			assert( g_nNum3DBuffers >= (int)( pDSCaps->dwMaxHw3DAllBuffers - pDSCaps->dwFreeHw3DAllBuffers ));
+			assert( g_nNum3DBuffers >= (int)( pDSCaps->dwMaxHw3DStaticBuffers		-	pDSCaps->dwFreeHw3DStaticBuffers ));
+			assert( g_nNum3DBuffers >= (int)( pDSCaps->dwFreeHw3DStreamingBuffers	-	pDSCaps->dwMaxHw3DStreamingBuffers ));
 
 			pDSCaps->dwFreeHw3DAllBuffers			=	g_nNum3DBuffers - ( pDSCaps->dwMaxHw3DAllBuffers		-	pDSCaps->dwFreeHw3DAllBuffers );
 			pDSCaps->dwFreeHw3DStaticBuffers		=	g_nNum3DBuffers - ( pDSCaps->dwMaxHw3DStaticBuffers		-	pDSCaps->dwFreeHw3DStaticBuffers );

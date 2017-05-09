@@ -27,21 +27,25 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+#define WIN32_LEAN_AND_MEAN
+
+#ifndef _DEBUG
+//#define new DEBUG_NEW		//<----TODO: fix this line
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 #include <windows.h>
 #include <stdio.h>
 #include <atlstr.h>
 #include <atltime.h>
+#include <assert.h>
+#include <atltrace.h>
 #include "mmsystem.h"
 #include "dsound.h"
 #include "DSoundTypes.h"
 #include "DSoundCtrl.h"
 #include "IDirectSoundClassFactoryEx.h"
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-#ifdef _DEBUG
-//#define new DEBUG_NEW		//<----TODO: fix this line
-#endif
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,7 +77,7 @@ void LogMessage(const char* szClassName, void* pInstance, char* szMessage )
 	::fwrite( buffer, 1 , strlen( buffer), f );
 	::fclose( f );
 
-	//TRACE( buffer );		//<----TODO: fix this line
+	ATLTRACE( buffer );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -449,7 +453,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *pp
 		LogMessage( g_cszClassName, NULL, "DirectSoundCreate called...");
 #endif // ENABLE_LOG
 
-	//ASSERT( g_pDirectSoundCreate != NULL );		//<----TODO: fix this line
+	assert( g_pDirectSoundCreate != NULL );
 
 #ifdef ENABLE_LOG
 	if( g_bDebugBeep == true )
@@ -579,7 +583,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *
 		Beep(2000, 100);
 #endif // ENABLE_LOG
 
-	//ASSERT( g_pDirectSoundCreate8 != NULL );		//<----TODO: fix this line
+	assert( g_pDirectSoundCreate8 != NULL );
 
 	IDirectSound8Ex* pDSX = new IDirectSound8Ex;
 
