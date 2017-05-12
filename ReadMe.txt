@@ -28,11 +28,6 @@ DSoundCtrl.rc
     in the RES subdirectory.  This file can be directly edited in Microsoft
     Visual C++.
 
-res\DSoundCtrl.rc2
-    This file contains resources that are not edited by Microsoft 
-    Visual C++.  You should place all resources not editable by
-    the resource editor in this file.
-
 DSoundCtrl.def
     This file contains information about the DLL that must be
     provided to run with Microsoft Windows.  It defines parameters
@@ -41,10 +36,6 @@ DSoundCtrl.def
 
 /////////////////////////////////////////////////////////////////////////////
 Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named DSoundCtrl.pch and a precompiled types file named StdAfx.obj.
 
 Resource.h
     This is the standard header file, which defines new resource IDs.

@@ -18,8 +18,14 @@
 // along with Direct Sound Control.  If not, see <http://www.gnu.org/licenses/>.
 //
 //////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Updated by Elisha Riedlinger 2017
+//
+//////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "StdAfx.h"
+#include <atlstr.h>
+#include "mmsystem.h"
+#include "dsound.h"
 #include "idirectsoundBufferex.h"
 #include "idirectsound3dBufferex.h"
 #include "idirectsound3dlistenerex.h"
