@@ -446,7 +446,7 @@ bool CDSoundCtrlApp::EnumCallback( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)
+HRESULT STDMETHODCALLTYPE DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -477,7 +477,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *pp
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOL DSDLLEnumCallbackA( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,  LPCSTR  lpcstrModule,   LPVOID  lpContext  )
+BOOL STDMETHODCALLTYPE DSDLLEnumCallbackA( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,  LPCSTR  lpcstrModule,   LPVOID  lpContext  )
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -493,7 +493,7 @@ BOOL DSDLLEnumCallbackA( LPGUID  lpGuid,    LPCSTR  lpcstrDescription,  LPCSTR  
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOL DSDLLEnumCallbackW(LPGUID  lpGuid,    LPCWSTR  lpcstrDescription,  LPCWSTR  lpcstrModule,   LPVOID  lpContext  )
+BOOL STDMETHODCALLTYPE DSDLLEnumCallbackW(LPGUID  lpGuid,    LPCWSTR  lpcstrDescription,  LPCWSTR  lpcstrModule,   LPVOID  lpContext  )
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -509,7 +509,7 @@ BOOL DSDLLEnumCallbackW(LPGUID  lpGuid,    LPCWSTR  lpcstrDescription,  LPCWSTR 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
+HRESULT STDMETHODCALLTYPE DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -523,7 +523,7 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
+HRESULT STDMETHODCALLTYPE DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -537,7 +537,7 @@ DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE *ppDSC, LPUNKNOWN pUnkOuter)
+HRESULT STDMETHODCALLTYPE DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE *ppDSC, LPUNKNOWN pUnkOuter)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -549,7 +549,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSO
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
+HRESULT STDMETHODCALLTYPE DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -561,7 +561,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCal
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
+HRESULT STDMETHODCALLTYPE DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -573,7 +573,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCal
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *ppDS8, LPUNKNOWN pUnkOuter)
+HRESULT STDMETHODCALLTYPE DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *ppDS8, LPUNKNOWN pUnkOuter)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -602,7 +602,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE8 *ppDSC8, LPUNKNOWN pUnkOuter)
+HRESULT STDMETHODCALLTYPE DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE8 *ppDSC8, LPUNKNOWN pUnkOuter)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -614,7 +614,7 @@ DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTS
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice,
+HRESULT STDMETHODCALLTYPE DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice,
         LPCDSCBUFFERDESC pcDSCBufferDesc, LPCDSBUFFERDESC pcDSBufferDesc, HWND hWnd,
         DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX* ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 *ppDSCBuffer8,
         LPDIRECTSOUNDBUFFER8 *ppDSBuffer8, LPUNKNOWN pUnkOuter)
@@ -632,7 +632,7 @@ DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest)
+HRESULT STDMETHODCALLTYPE GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -644,7 +644,7 @@ DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest)
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-STDAPI DllCanUnloadNow(void)
+STDAPI STDMETHODCALLTYPE DllCanUnloadNow(void)
 {
 #ifdef ENABLE_LOG
 	if( g_bLogSystem == true )
@@ -655,7 +655,7 @@ STDAPI DllCanUnloadNow(void)
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-STDAPI DllGetClassObject(IN REFCLSID rclsid, IN REFIID riid, OUT LPVOID FAR* ppv)
+STDAPI STDMETHODCALLTYPE DllGetClassObject(IN REFCLSID rclsid, IN REFIID riid, OUT LPVOID FAR* ppv)
 {
 	*ppv = NULL;
 

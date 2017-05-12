@@ -31,14 +31,6 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifdef DSOUNDCTRL_EXPORTS
-#define DSOUNDCTRL_API __declspec(dllexport)
-#else
-#define DSOUNDCTRL_API
-#endif
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
 #define PROGRAM_VERSION					"V1.82"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,23 +82,6 @@ extern "C" {  // only need to export C interface if
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 #undef DirectSoundCreate
-
-	DSOUNDCTRL_API HRESULT DirectSoundCreate(LPCGUID pcGuidDevice, LPDIRECTSOUND *ppDS, LPUNKNOWN pUnkOuter);
-	DSOUNDCTRL_API HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext);
-	DSOUNDCTRL_API HRESULT DirectSoundEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext);
-
-	DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE *ppDSC, LPUNKNOWN pUnkOuter);
-	DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateA(LPDSENUMCALLBACKA pDSEnumCallback, LPVOID pContext);
-	DSOUNDCTRL_API HRESULT DirectSoundCaptureEnumerateW(LPDSENUMCALLBACKW pDSEnumCallback, LPVOID pContext);
-
-	DSOUNDCTRL_API HRESULT DirectSoundCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUND8 *ppDS8, LPUNKNOWN pUnkOuter);
-	DSOUNDCTRL_API HRESULT DirectSoundCaptureCreate8(LPCGUID pcGuidDevice, LPDIRECTSOUNDCAPTURE8 *ppDSC8, LPUNKNOWN pUnkOuter);
-	DSOUNDCTRL_API HRESULT DirectSoundFullDuplexCreate(LPCGUID pcGuidCaptureDevice, LPCGUID pcGuidRenderDevice,
-		LPCDSCBUFFERDESC pcDSCBufferDesc, LPCDSBUFFERDESC pcDSBufferDesc, HWND hWnd,
-		DWORD dwLevel, LPDIRECTSOUNDFULLDUPLEX* ppDSFD, LPDIRECTSOUNDCAPTUREBUFFER8 *ppDSCBuffer8,
-		LPDIRECTSOUNDBUFFER8 *ppDSBuffer8, LPUNKNOWN pUnkOuter);
-
-	DSOUNDCTRL_API HRESULT GetDeviceID(LPCGUID pGuidSrc, LPGUID pGuidDest);
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -209,5 +184,3 @@ protected :
 	const char* m_cszClassName;
 #endif // ENABLE_LOG
 };
-
-//////////////////////////////////////////////////////////////////////////////////////////////
